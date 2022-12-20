@@ -1,0 +1,99 @@
+{
+  "class": [
+    {
+      "id": 1,
+      "Classs": "B.A"
+    },
+    {
+      "id": 2,
+      "Classs": "B.com"
+    },
+    {
+      "id": 3,
+      "Classs": "M.Com"
+    }
+  ],
+  "student": [
+    {
+      "id": 2,
+      "mark": "40",
+      "class": "2",
+      "address1": "742 Oak Avenue",
+      "email": "larucy@mailinator.com",
+      "mobile": "68",
+      "name": "citimi@mailinator.com"
+    },
+    {
+      "id": 3,
+      "mark": "65",
+      "class": "3",
+      "address1": "272 Cowley Court",
+      "email": "qydirepe@mailinator.com",
+      "mobile": "51",
+      "name": "mylicura@mailinator.com"
+    },
+    {
+      "id": 4,
+      "mark": "71",
+      "class": "1",
+      "address1": "66 Fabien Court",
+      "email": "lebomah@mailinator.com",
+      "mobile": "20",
+      "name": "zufatuqi@mailinator.com"
+    },
+    {
+      "id": 5,
+      "mark": "11",
+      "class": "2",
+      "address1": "878 South Green Hague Freeway",
+      "email": "jume@mailinator.com",
+      "mobile": "2",
+      "name": "xevinyp@mailinator.com"
+    },
+    {
+      "id": 6,
+      "mark": "22",
+      "class": "1",
+      "address1": "83 South Fabien Road",
+      "email": "jymekys@mailinator.com",
+      "mobile": "76",
+      "name": "bymyj@mailinator.com"
+    },
+    {
+      "id": 7,
+      "mark": "14",
+      "class": "3",
+      "address1": "355 First Road",
+      "email": "jybibivi@mailinator.com",
+      "mobile": "69",
+      "name": "cyfyf@mailinator.com"
+    },
+    {
+      "id": 8,
+      "mark": "25",
+      "class": "1",
+      "address1": "841 Fabien Parkway",
+      "email": "xipugys@mailinator.com",
+      "mobile": "53",
+      "name": "fenyvoq@mailinator.com"
+    },
+    {
+      "id": 9,
+      "mark": "78",
+      "class": "3",
+      "address1": "436 North New Avenue",
+      "email": "tageqas@mailinator.com",
+      "mobile": "7",
+      "name": "jerupip@mailinator.com"
+    },
+    {
+      "id": 10,
+      "mark": "76",
+      "class": "2",
+      "address1": "37 East Rocky First Street",
+      "email": "tykuki@mailinator.com",
+      "mobile": "85",
+      "name": "kepedaryv@mailinator.com"
+    }
+  ]
+}

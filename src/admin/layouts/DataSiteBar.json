@@ -1,0 +1,35 @@
+[
+    {
+        "title": "Dashboard",
+        "sub_title":"Dashboard Example 1",
+        "icon": "fa-solid fa-house metismenu-icon",
+        "path": "/"
+    }, {
+        "title": "School ERP",
+        "sub_title":"Student",
+        "icon1": "fa-solid fa-arrow-right metismenu-icon",
+        "icon2": "fa-brands fa-atlassian metismenu-state-icon caret-left",
+        "childrens": [{
+            "title": "Add",
+            "icon": "metismenu-icon",
+            "path": "/c_create"
+        }, {
+            "title": "List",
+            "icon": "metismenu-icon",
+            "path": "/c_list"
+        }]
+    },{
+        "sub_title":"Class",
+        "icon1": "fa-solid fa-arrow-right metismenu-icon",
+        "icon2": "fa-brands fa-atlassian metismenu-state-icon caret-left",
+        "childrens": [{
+            "title": "Add",
+            "icon": "metismenu-icon",
+            "path": "/s_create"
+        }, {
+            "title": "List",
+            "icon": "metismenu-icon",
+            "path": "/s_list"
+        }]
+    }
+]
