@@ -1,11 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Data from "./DataSiteBar.json";
 import Iteam from "./Iteam";
+import LoadingBar from "react-top-loading-bar";
+import { useNavigate } from "react-router-dom";
 
 const Master = (props) => {
+  // set bar prograss
+  const [progress, setProgress] = useState(0);
+  const listen = useNavigate();
+  useEffect(() => {
+    setProgress(40);
+    setTimeout(() => {
+      setProgress(100);
+    }, 400);
+  }, [listen]);
+  // set bar prograss end
   const Cmp = props.Component;
   return (
     <>
+      <LoadingBar
+        color="red"
+        progress={progress}
+        onLoaderFinished={() => setProgress(0)}
+      />
       <div className="app-header header-shadow">
         <div className="app-header__logo">
           <img

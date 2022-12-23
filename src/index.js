@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+// import Home from "./Demo/Part2/Home";
 import App from "./App";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
