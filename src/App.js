@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Master from "./admin/layouts/Master";
 import C_index from "./admin/students/C_index";
 import A_dashboard from "./admin/A_dashboard";
