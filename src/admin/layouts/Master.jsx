@@ -1,153 +1,91 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { CSVLink } from "react-csv";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import jsPDF from "jspdf";
-import autoTable from "jspdf-autotable";
+import Data from "./DataSiteBar.json";
+import Iteam from "./Iteam";
+import LoadingBar from "react-top-loading-bar";
+import { useNavigate } from "react-router-dom";
 
-const T_index = () => {
-  const notify = () => toast.error("Record Delete Successfully");
-  const [Class, SetClass] = useState([]);
-  const LoadClass = () => {
-    axios
-      .get(`http://localhost:2000/teacher`)
-      .then(function (response) {
-        SetClass(response.data);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  };
+const Master = (props) => {
+  // set bar prograss
+  const [progress, setProgress] = useState(0);
+  const listen = useNavigate();
   useEffect(() => {
-    LoadClass();
-  }, []);
+    setProgress(40);
+    setTimeout(() => {
+      setProgress(100);
+    }, 400);
+  }, [listen]);
+  // set bar prograss end
 
-  const Deleted = (id) => {
-    axios
-      .delete(`http://localhost:2000/teacher/${id}`)
-      .then(function (response) {
-        LoadClass();
-        notify();
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  };
-
-  // Search Array
-  const OnInputs = (e) => {
-    if (e.target.value === "") {
-      LoadClass();
-    } else {
-      var filtered = Class.filter((p) =>
-        String(p.t_name).startsWith(e.target.value)
-      );
-      SetClass(filtered);
-    }
-  };
-  // PDF down
-  const PDF = () => {
-    const doc = new jsPDF();
-    autoTable(doc, { html: "#my-table" });
-    doc.save("Teacher.pdf");
-  };
+  const Cmp = props.Component;
   return (
     <>
-      <div className="row">
-        <div className="col-md-12">
-          <div className="main-card mb-3 card">
-            <div className="card-header">
-              Teacher List
-              <CSVLink
-                data={Class}
-                filename={"Teacher.csv"}
-                className="bg-info p-2 ml-5"
+      <LoadingBar
+        color="red"
+        progress={progress}
+        onLoaderFinished={() => setProgress(0)}
+      />
+      <div className="app-header header-shadow">
+        <div className="app-header__logo">
+          <img
+            src={require("../img/fev.png")}
+            alt="logo"
+            width="50px"
+            height="50px"
+          />
+          <div className="header__pane ml-auto">
+            <div>
+              <button
+                type="button"
+                className="hamburger close-sidebar-btn hamburger--elastic"
+                data-class="closed-sidebar"
               >
-                Excel
-              </CSVLink>
-              <Link to onClick={PDF} className="bg-success p-2">
-                PDF
-              </Link>
-              <div className="btn-actions-pane-right d-flex">
-                <div>
-                  <input
-                    type="text"
-                    className="form-control"
-                    onChange={(e) => OnInputs(e)}
-                  />
-                </div>
-                <div role="group" className="btn-group-sm btn-group">
-                  <Link className="btn btn-success mx-2" to="/t_create">
-                    Add
-                  </Link>
+                <span className="hamburger-box">
+                  <span className="hamburger-inner" />
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div className="app-header__content">
+          <div className="app-header-right">
+            <div className="header-btn-lg pr-0">
+              <div className="widget-content p-0">
+                <div className="widget-content-wrapper">
+                  <div className="widget-content-right header-user-info ml-3">
+                    <button
+                      type="button"
+                      className="btn-shadow p-2 btn btn-primary btn-sm show-toastr-example"
+                    >
+                      Log in
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
-
-            <div className="table-responsive">
-              <table
-                id="my-table"
-                className="align-middle mb-0 table table-borderless table-striped table-hover text-center"
-              >
-                <thead>
-                  <tr>
-                    <th className="text-center">Sr.No</th>
-                    <th>Teacher Name</th>
-                    <th className="text-center">Mob No</th>
-                    <th className="text-center">Email</th>
-                    <th className="text-center">Address</th>
-                    <th className="text-center">Education</th>
-                    <th className="text-center">Actions</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {Class.map((iteam, index) => (
-                    <tr key={index}>
-                      <td>{index + 1}</td>
-                      <td>{iteam.t_name}</td>
-                      <td>{iteam.t_mob_no}</td>
-                      <td>{iteam.t_email}</td>
-                      <td>{iteam.t_address}</td>
-                      <td>{iteam.t_education}</td>
-                      <td className="text-center d-flex">
-                        <Link
-                          className="btn btn-success"
-                          to={`/t_edit/${iteam.id}`}
-                        >
-                          <i className="fa-regular fa-pen-to-square"></i>
-                        </Link>
-
-                        <Link
-                          className="btn btn-danger mx-2"
-                          onClick={() => Deleted(iteam.id)}
-                        >
-                          <i className="fa-solid fa-trash"></i>
-                        </Link>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
             </div>
           </div>
         </div>
       </div>
-      <ToastContainer
-        position="bottom-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-      />
+      <div className="app-main">
+        <div className="app-sidebar sidebar-shadow">
+          <div className="scrollbar-sidebar">
+            <div className="app-sidebar__inner">
+              <ul className="vertical-nav-menu">
+                {Data.map((item, index) => (
+                  <Iteam key={index} item={item} />
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div className="app-main__outer">
+          <div className="app-main__inner">
+            <Cmp></Cmp>
+          </div>
+        </div>
+      </div>
     </>
   );
 };
 
-export default T_index;
+export default Master;
