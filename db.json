@@ -95,5 +95,31 @@
       "mobile": "85",
       "name": "kepedaryv@mailinator.com"
     }
+  ],
+  "teacher": [
+    {
+      "id": 1,
+      "t_name": "vivysepe@mailinator.com",
+      "t_mob_no": "89",
+      "t_address": "Obcaecati ut tempora",
+      "t_email": "gorobopojy@mailinator.com",
+      "t_education": "Odio adipisci ipsum "
+    },
+    {
+      "id": 2,
+      "t_name": "xygikyl@mailinator.com",
+      "t_mob_no": "47",
+      "t_address": "Et temporibus facere",
+      "t_email": "wihy@mailinator.com",
+      "t_education": "Voluptatibus et non "
+    },
+    {
+      "id": 3,
+      "t_name": "byrohimur@mailinator.com",
+      "t_mob_no": "66",
+      "t_address": "Soluta incidunt qui",
+      "t_email": "sagaj@mailinator.com",
+      "t_education": "Dignissimos et numqu"
+    }
   ]
 }

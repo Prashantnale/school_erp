@@ -31,5 +31,19 @@
             "icon": "metismenu-icon",
             "path": "/s_list"
         }]
+    },
+    {
+        "sub_title":"Teacher",
+        "icon1": "fa-solid fa-arrow-right metismenu-icon",
+        "icon2": "fa-brands fa-atlassian metismenu-state-icon caret-left",
+        "childrens": [{
+            "title": "Add",
+            "icon": "metismenu-icon",
+            "path": "/t_create"
+        }, {
+            "title": "List",
+            "icon": "metismenu-icon",
+            "path": "/t_list"
+        }]
     }
 ]

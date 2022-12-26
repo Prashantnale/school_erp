@@ -8,6 +8,9 @@ import C_edit from "./admin/students/C_edit";
 import S_edit from "./admin/class/S_edit";
 import S_create from "./admin/class/S_create";
 import S_index from "./admin/class/S_index";
+import T_create from "./admin/teacher/T_create";
+import T_list from "./admin/teacher/T_list";
+import T_edit from "./admin/teacher/T_edit";
 
 const App = () => {
   return (
@@ -39,6 +42,11 @@ const App = () => {
             path="/s_list"
             element={<Master Component={S_index} />}
           ></Route>
+          {/* Teacher Routes */}
+
+          <Route path="/t_create" element={<Master Component={T_create} />} />
+          <Route path="/t_list" element={<Master Component={T_list} />} />
+          <Route path="/t_edit/:id" element={<Master Component={T_edit} />} />
         </Routes>
       </BrowserRouter>
     </>
