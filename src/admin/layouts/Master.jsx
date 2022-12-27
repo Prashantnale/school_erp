@@ -17,6 +17,15 @@ const Master = (props) => {
   // set bar prograss end
 
   const Cmp = props.Component;
+
+  // btn side bar
+  const [Open, SetOpen] = useState(false);
+  const SideMain = document.body.classList;
+  if (Open) {
+    SideMain.add("closed-sidebar");
+  } else {
+    SideMain.remove("closed-sidebar");
+  }
   return (
     <>
       <LoadingBar
@@ -35,8 +44,13 @@ const Master = (props) => {
           <div className="header__pane ml-auto">
             <div>
               <button
+                onClick={() => SetOpen(!Open)}
                 type="button"
-                className="hamburger close-sidebar-btn hamburger--elastic"
+                className={
+                  Open
+                    ? "hamburger close-sidebar-btn hamburger--elastic"
+                    : "hamburger close-sidebar-btn hamburger--elastic is-active"
+                }
                 data-class="closed-sidebar"
               >
                 <span className="hamburger-box">
@@ -49,23 +63,16 @@ const Master = (props) => {
 
         <div className="app-header__content">
           <div className="app-header-right">
-            <div className="header-btn-lg pr-0">
-              <div className="widget-content p-0">
-                <div className="widget-content-wrapper">
-                  <div className="widget-content-right header-user-info ml-3">
-                    <button
-                      type="button"
-                      className="btn-shadow p-2 btn btn-primary btn-sm show-toastr-example"
-                    >
-                      Log in
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <button
+              type="button"
+              className="btn-shadow p-2 btn btn-primary btn-sm show-toastr-example"
+            >
+              Log in
+            </button>
           </div>
         </div>
       </div>
+
       <div className="app-main">
         <div className="app-sidebar sidebar-shadow">
           <div className="scrollbar-sidebar">
