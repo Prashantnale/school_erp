@@ -9,10 +9,13 @@ const Master = (props) => {
   const [progress, setProgress] = useState(0);
   const listen = useNavigate();
   useEffect(() => {
-    setProgress(40);
+    setProgress(30);
+    setTimeout(() => {
+      setProgress(60);
+    }, 400);
     setTimeout(() => {
       setProgress(100);
-    }, 400);
+    }, 700);
   }, [listen]);
   // set bar prograss end
 
