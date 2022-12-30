@@ -1,16 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
 // react-redux // @reduxjs/toolkit npm intalle
-const initialState = 10;
 
 export const productSlice = createSlice({
   name: "index",
-  initialState: initialState,
+  initialState: 0,
   reducers: {
     Inc: (state, action) => {
-      return (state += 10);
+      return (state += 100);
     },
     Dec: (state, action) => {
-      return (state -= 10);
+      return (state -= 100);
     },
   },
 });
